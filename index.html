@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="root"></div>
+  <script src="dark.js"></script>
+  <script src="white.js"></script>
+  <script>
+    const darkmode = document.getElementById('button');
+    let switchValue = true;
+    darkmode.addEventListener('click', function() {
+      if(switchValue === true) {
+        // 밝은 버전의 스타일링
+        switchValue = false;
+        // 위에 스타일링 실행이 끝났으므로 false로 재할당
+      } else {
+        // 어두운 버전의 스타일링
+        switchValue = true;
+        // 위에 어두운 버전 스타일링 끝났으므로 true로 재할당
+      }
+    });
+  </script>
+</body>
+</html>
