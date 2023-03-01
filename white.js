@@ -1,10 +1,12 @@
-function elementMaker(tagname,parent) {
+function elementMaker(tagname,setAttriName, setAttriValue,parent) {
   const element = document.createElement(tagname);
+  element.setAttribute(setAttriName, setAttriValue);
   parent.appendChild(element);
 }
-for(let i = 0; i<4; i++) {
-elementMaker('div', root)
+for(let i = 0; i<3; i++) {
+  elementMaker('div', 'id',`test-${i}`, root)
 }
+elementMaker('div', 'id', 'button', root);
 console.dir(root.children)
 
 const trainingData = {
@@ -12,7 +14,6 @@ const trainingData = {
   paragraph : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   color: ["#1E1E1E", "#FFFFFF"],
 };
-
 //root 스타일 
 root.style.position = "relative";
 root.style.width = "430px";

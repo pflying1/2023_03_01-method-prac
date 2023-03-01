@@ -11,22 +11,33 @@
 </head>
 <body>
   <div id="root"></div>
-  <script src="dark.js"></script>
-  <script src="white.js"></script>
-  <script>
-    const darkmode = document.getElementById('button');
-    let switchValue = true;
-    darkmode.addEventListener('click', function() {
-      if(switchValue === true) {
-        // 밝은 버전의 스타일링
-        switchValue = false;
-        // 위에 스타일링 실행이 끝났으므로 false로 재할당
-      } else {
-        // 어두운 버전의 스타일링
-        switchValue = true;
-        // 위에 어두운 버전 스타일링 끝났으므로 true로 재할당
-      }
-    });
-  </script>
+    <!-- <script src="dark.js"></script> -->
+    <script src="white.js"></script>
+    <script>
+      
+      const darkmode = document.getElementById('button');
+      let switchValue = true;
+      darkmode.addEventListener('click', function() {
+        if(switchValue === true) {
+          // 밝은 버전의 스타일링
+          root.style.backgroundColor = "white";
+          root.children[0].style.color = "black";
+          root.children[1].style.backgroundColor = "black";
+          root.children[2].style.color = "black";
+          root.children[3].style.backgroundColor = "black";
+          switchValue = false;
+          // 위에 스타일링 실행이 끝났으므로 false로 재할당
+        } else {
+          // 어두운 버전의 스타일링
+          root.style.backgroundColor = trainingData.color[0];
+          root.children[0].style.color = trainingData.color[1];
+          root.children[1].style.backgroundColor = trainingData.color[1];
+          root.children[2].style.color = trainingData.color[1];
+          root.children[3].style.backgroundColor = trainingData.color[1];
+          switchValue = true;
+          // 위에 어두운 버전 스타일링 끝났으므로 true로 재할당
+        }
+      });
+      </script>
 </body>
 </html>
